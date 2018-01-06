@@ -1,0 +1,19 @@
+{
+  "name": "uikit_starter_theme",
+  "version": "1.0.0",
+  "description": "UIKit Starter Theme with NPM as a building tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doocodes/uikit-starter-theme.git"
+  },
+  "author": "Milos Djordjevic <milos@themelaboratory.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doocodes/uikit-starter-theme/issues"
+  },
+  "homepage": "https://github.com/doocodes/uikit-starter-theme#readme"
+}

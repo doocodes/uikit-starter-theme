@@ -1,19 +1,53 @@
 {
-  "name": "uikit_starter_theme",
+  "name": "docodes-uikit-theme",
+  "title": "UIkit Theme Boilerplait",
+  "description": "UIkit Theme Boilerplait is a starint point for ....",
   "version": "1.0.0",
-  "description": "UIKit Starter Theme with NPM as a building tool",
-  "main": "index.js",
+  "main": "dist/js/site.js",
+  "style": "dist/css/site.css",
+  "homepage": "http://",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -f dist/js/*.js* dist/css/*.css dist/fonts/*.*",
+    "build:less": "npm run build:less:theme && npm run build:less:vendors",
+    "build:less:theme": "lessc src/less/site.less dist/css/site.css",
+    "build:less:vendors": "lessc src/less/vendors.less dist/css/vendors.css",
+    "build:js": "rollup -c",
+    "build:js:vendors": "node build/vendors",
+    "copy": "node build/copy",
+    "dev": "npm run build:less && npm run build:js:vendors && npm run copy && npm run watch",
+    "watch": "npm-watch",
+    "build": "npm run clean && npm run build:less && npm run build:js && npm run build:js:vendors && npm run copy",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "livereload": "^0.6.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/doocodes/uikit-starter-theme.git"
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "fs-extra": "^5.0.0",
+    "less": "^2.7.1",
+    "npm-watch": "^0.3.0",
+    "rollup": "^0.39.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-eslint": "^3.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-postcss": "^0.2.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-watch": "^3.0.0"
   },
-  "author": "Milos Djordjevic <milos@themelaboratory.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/doocodes/uikit-starter-theme/issues"
+  "dependencies": {
+    "debug": "^3.1.0",
+    "imagesloaded": "^4.1.4",
+    "jquery": "^3.2.1",
+    "uikit": "^3.0.0-beta.35"
   },
-  "homepage": "https://github.com/doocodes/uikit-starter-theme#readme"
+  "watch": {
+    "build:js": "src/js/**/*.js",
+    "build:less:theme": {
+      "patterns": "**/*.less",
+      "extensions": "less"
+    }
+  }
 }

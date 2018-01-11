@@ -1,0 +1,263 @@
+// Name:            Animation
+// Description:     Utilities for keyframe animations
+//
+// Component:       `uk-animation-*`
+//
+// Modifiers:       `uk-animation-reverse`
+//                  `uk-animation-fast`
+//                  `uk-animation-fade`
+//                  `uk-animation-scale-up`
+//                  `uk-animation-scale-down`
+//                  `uk-animation-slide-top-*`
+//                  `uk-animation-slide-bottom-*`
+//                  `uk-animation-slide-left-*`
+//                  `uk-animation-slide-right-*`
+//                  `uk-animation-kenburns`
+//                  `uk-animation-shake`
+//
+// Sub-objects:     `uk-animation-toggle`
+//
+// States:          `uk-hover`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@animation-duration:                            0.5s;
+@animation-fade-duration:                       0.8s;
+@animation-kenburns-duration:                   15s;
+@animation-fast-duration:                       0.1s;
+
+@animation-slide-small-translate:               10px;
+@animation-slide-medium-translate:              50px;
+
+
+/* ========================================================================
+   Component: Animation
+ ========================================================================== */
+
+[class*='uk-animation-'] {
+    animation-duration: @animation-duration;
+}
+
+
+/* Animations for scrollspy
+ ========================================================================== */
+
+/*
+ * Fade
+ */
+
+.uk-animation-fade {
+    animation-duration: @animation-fade-duration;
+}
+
+/*
+ * Kenburns
+ */
+
+.uk-animation-kenburns {
+    animation-duration: @animation-kenburns-duration;
+}
+
+
+/* Duration modifier
+ ========================================================================== */
+
+.uk-animation-fast { animation-duration: @animation-fast-duration; }
+
+
+/* Enable animation only on hover
+========================================================================== */
+
+/*
+ * Note: Firefox and IE needs this because animations are not triggered when switching between display `none` and `block`
+ */
+
+.uk-animation-toggle:not(:hover):not(.uk-hover) [class*='uk-animation-'] { animation-name: none; }
+
+
+/* Keyframes used by animation classes
+ ========================================================================== */
+
+@keyframes uk-fade-top-small {
+    0% {
+        opacity: 0;
+        transform: translateY(-@animation-slide-small-translate);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+ * Slide Bottom Small
+ */
+
+@keyframes uk-fade-bottom-small {
+    0% {
+        opacity: 0;
+        transform: translateY(@animation-slide-small-translate);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+ * Slide Left Small
+ */
+
+@keyframes uk-fade-left-small {
+    0% {
+        opacity: 0;
+        transform: translateX(-@animation-slide-small-translate);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+ * Slide Right Small
+ */
+
+@keyframes uk-fade-right-small {
+    0% {
+        opacity: 0;
+        transform: translateX(@animation-slide-small-translate);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+ * Slide Top Medium
+ */
+
+@keyframes uk-fade-top-medium {
+    0% {
+        opacity: 0;
+        transform: translateY(-@animation-slide-medium-translate);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+ * Slide Bottom Medium
+ */
+
+@keyframes uk-fade-bottom-medium {
+    0% {
+        opacity: 0;
+        transform: translateY(@animation-slide-medium-translate);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*
+ * Slide Left Medium
+ */
+
+@keyframes uk-fade-left-medium {
+    0% {
+        opacity: 0;
+        transform: translateX(-@animation-slide-medium-translate);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+ * Slide Right Medium
+ */
+
+@keyframes uk-fade-right-medium {
+    0% {
+        opacity: 0;
+        transform: translateX(@animation-slide-medium-translate);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+ * Scale Up
+ */
+
+@keyframes uk-fade-scale-02 {
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*
+ * Scale Down
+ */
+
+@keyframes uk-fade-scale-18 {
+    0% {
+        opacity: 0;
+        transform: scale(1.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*
+ * Kenburns
+ */
+
+@keyframes uk-scale-kenburns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+/*
+ * Shake
+ */
+
+@keyframes uk-shake {
+    0%, 100% { transform: translateX(0); }
+    10% { transform: translateX(-9px); }
+    20% { transform: translateX(8px); }
+    30% { transform: translateX(-7px); }
+    40% { transform: translateX(6px); }
+    50% { transform: translateX(-5px); }
+    60% { transform: translateX(4px); }
+    70% { transform: translateX(-3px); }
+    80% { transform: translateX(2px); }
+    90% { transform: translateX(-1px); }
+}
+
+
+// Hooks
+// ========================================================================
+
+.hook-animation-misc;
+
+.hook-animation-misc() {}

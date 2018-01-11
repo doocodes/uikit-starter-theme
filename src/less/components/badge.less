@@ -1,0 +1,90 @@
+// Name:            Badge
+// Description:     Component to create notification badges
+
+// Component:       `uk-badge`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@badge-size:                                    22px;
+@badge-padding-vertical:                        0;
+@badge-padding-horizontal:                      5px;
+@badge-border-radius:                           500px;
+@badge-background:                              @global-primary-background;
+@badge-color:                                   @global-inverse-color;
+@badge-font-size:                               @global-small-font-size;
+
+@badge-hover-color:                             @global-inverse-color;
+
+
+/* ========================================================================
+   Component: Badge
+ ========================================================================== */
+
+/*
+ * 1. Style
+ * 2. Center child vertically and horizontally
+ */
+
+.uk-badge {
+    min-width: @badge-size;
+    height: @badge-size;
+    padding: @badge-padding-vertical @badge-padding-horizontal;
+    border-radius: @badge-border-radius;
+    /* 1 */
+    background: @badge-background;
+    color: @badge-color;
+    font-size: @badge-font-size;
+    /* 2 */
+    .hook-badge;
+}
+
+/*
+ * Required for `a`
+ */
+
+.uk-badge:hover,
+.uk-badge:focus {
+    color: @badge-hover-color;
+    .hook-badge-hover;
+}
+
+
+// Hooks
+// ========================================================================
+
+.hook-badge-misc;
+
+.hook-badge() {}
+.hook-badge-hover() {}
+.hook-badge-misc() {}
+
+
+// Inverse
+// ========================================================================
+
+@inverse-badge-background:                     @inverse-global-primary-background;
+@inverse-badge-color:                          @inverse-global-inverse-color;
+@inverse-badge-hover-color:                    @inverse-global-inverse-color;
+
+.hook-inverse() {
+
+    .uk-badge {
+        background-color: @inverse-badge-background;
+        color: @inverse-badge-color;
+        .hook-inverse-badge;
+    }
+
+    .uk-badge:hover,
+    .uk-badge:focus {
+        color: @inverse-badge-hover-color;
+        .hook-inverse-badge-hover;
+    }
+
+}
+
+.hook-inverse-badge() {}
+.hook-inverse-badge-hover() {}

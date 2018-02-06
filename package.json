@@ -38,10 +38,10 @@
     "rollup-watch": "^3.0.0"
   },
   "dependencies": {
-    "debug": "^3.1.0",
     "imagesloaded": "^4.1.4",
     "jquery": "^3.2.1",
-    "uikit": "^3.0.0-beta.35"
+    "uikit": "^3.0.0-beta.39",
+    "verge": "^1.10.2"
   },
   "watch": {
     "build:js": "src/js/**/*.js",

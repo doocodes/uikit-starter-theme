@@ -11,6 +11,7 @@ var glob = require('glob');
  { "source": "node_modules/uikit/dist/js/uikit-icons.min.js", "dest": "dist/js/uikit-icons.min.js" },
  { "source": "node_modules/uikit/dist/js/uikit.js", "dest": "dist/js/uikit.js" },
  { "source": "node_modules/uikit/dist/js/uikit.min.js", "dest": "dist/js/uikit.min.js" },
+ { "source": "src/js/modernizr-custom.js", "dest": "dist/js/modernizr-custom.js" },
 
  /* Fonts */
  { "source": "src/fonts", "dest": "dist/fonts" },

@@ -2,7 +2,7 @@
   "name": "docodes-uikit-theme",
   "title": "UIkit Theme Boilerplait",
   "description": "UIkit Theme Boilerplait is a starint point for ....",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/js/site.js",
   "style": "dist/css/site.css",
   "homepage": "http://",
@@ -26,8 +26,6 @@
     "livereload": "^0.6.3"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-plugin-external-helpers": "^6.22.0",
     "concat": "^1.0.3",
     "fs-extra": "^5.0.0",
     "less": "^2.7.1",
